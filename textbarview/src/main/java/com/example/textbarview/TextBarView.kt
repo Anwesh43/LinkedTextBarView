@@ -209,4 +209,13 @@ class TextBarView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : TextBarView {
+            val view : TextBarView = TextBarView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
