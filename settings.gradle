@@ -1,0 +1,3 @@
+include ':textbarview'
+include ':app'
+rootProject.name = "LinkedTextBarView"
