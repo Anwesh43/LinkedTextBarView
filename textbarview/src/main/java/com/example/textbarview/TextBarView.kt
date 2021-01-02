@@ -58,3 +58,18 @@ fun Canvas.drawTBNode(i : Int, scale : Float, paint : Paint) {
     drawTextBar(scale, w, h, paint)
 }
 
+class TextBarView(ctx : Context) : View(ctx) {
+
+    override fun onDraw(canvas : Canvas) {
+
+    }
+
+    override fun onTouchEvent(event : MotionEvent) : Boolean {
+        when (event.action) {
+            MotionEvent.ACTION_DOWN -> {
+
+            }
+        }
+        return true
+    }
+}
