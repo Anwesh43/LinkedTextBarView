@@ -14,7 +14,7 @@ val parts : Int = 2
 val scGap : Float = 0.02f / parts
 val strokeFactor : Float = 90f
 val fontFactor : Float = 15f
-val barHFactor : Float = 11f
+val barHFactor : Float = 8.9f
 val backColor : Int = Color.parseColor("#BDBDBD")
 val delay : Long = 20
 val colors : Array<Int> = arrayOf(
@@ -45,8 +45,8 @@ fun Canvas.drawTextBar(scale : Float, w : Float, h : Float, paint : Paint) {
     drawRect(RectF(0f, -barH * sf1, w, 0f), paint)
     paint.color = backColor
     save()
-    translate(0f, -barH / 2 + (fontSize / 2 + barH / 2) * (1f - sf2))
-    drawText(text, -tw / 2, -fontSize / 4, paint)
+    translate(w / 2, -barH / 2 + (barH) * (1f - sf2))
+    drawText(text, -tw / 2, fontSize / 4, paint)
     restore()
     restore()
 }
