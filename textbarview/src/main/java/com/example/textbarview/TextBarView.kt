@@ -184,4 +184,27 @@ class TextBarView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : TextBarView) {
+
+        private val animator : Animator = Animator(view)
+        private val tb : TextBar = TextBar(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            tb.draw(canvas, paint)
+            animator.animate {
+                tb.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            tb.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
